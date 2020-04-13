@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-3 text-right">
+            <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At deserunt in iusto, laboriosam provident quasi. Accusamus animi aspernatur atque consequuntur, doloremque excepturi illo ipsa magnam molestiae nisi, omnis, sunt veritatis.</h1>
+        </div>
+        <div class="col-9">
+            {% if hizmetlers %}
+                {% for hizmetler in hizmetlers %}
+                    {% include 'pieces/post.html' with post=hizmetler %}
+                {% endfor %}
+            {% else %}
+                <h1>Nothing</h1>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
