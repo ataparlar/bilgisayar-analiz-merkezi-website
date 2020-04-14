@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
 from .models import *
 
 # Create your views here.
@@ -17,7 +16,15 @@ def hizmetler_view(request):
     kasa_pc_post = Post.objects.filter(page=Sayfa.objects.all()[2])
     laptop_post = Post.objects.filter(page=Sayfa.objects.all()[1])
     satis_post = Post.objects.filter(page=Sayfa.objects.all()[0])
+    urls = {
+        "satis": "pieces/hizmetler/satis.html",
+        "yazici": "pieces/hizmetler/yazici.html",
+        "monitor": "pieces/hizmetler/monitor.html",
+        "laptop": "pieces/hizmetler/laptop.html",
+        "kasa-pc": "pieces/hizmetler/kasa-pc.html"
+    }
     hizmetler_dict = {
+        "urls": urls,
         "hizmetlers": hizmetler_post,
         "yazicis": yazici_post,
         "monitors": monitor_post,

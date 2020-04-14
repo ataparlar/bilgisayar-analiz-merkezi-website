@@ -24,6 +24,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', main_view),
     path('hizmetler', hizmetler_view),
+    path('hizmetler/satis', hizmetler_view),
+    path('hizmetler/yazici', hizmetler_view),
+    path('hizmetler/monitor', hizmetler_view),
+    path('hizmetler/laptop', hizmetler_view),
+    path('hizmetler/kasa-pc', hizmetler_view),
 ]
 
 

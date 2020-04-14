@@ -1,4 +1,19 @@
+{% if post.small_text %}
+    <div class="col-3 text-center">
+        <h2>{{ post.small_text }}</h2>
+    </div>
+    <div class="col-9">
+        <img class="col-12" src="{{ post.img.url }}" alt="" style="border: 2px solid red">
+        <br>
+        <h2 class="font-weight-bold">{{ post.title }}</h2>
+        <h4 class="font-weight-normal">{{ post.text }}</h4>
+    </div>
+{% else %}
+    <div class="col-12">
+        <img class="col-12 text-center" src="{{ post.img.url }}" alt="">
+        <br>
+        <h2 class="font-weight-bold">{{ post.title }}</h2>
+        <h4 class="font-weight-normal">{{ post.text }}</h4>
+    </div>
+{% endif %}
 
-    <h2 class="font-weight-bold">{{ post.title }}</h2>
-
-<h5 class="font-weight-normal">{{ post.text }}</h5>
