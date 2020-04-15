@@ -1,5 +1,11 @@
-<h1>laptop</h1><br>
-<h1>laptop</h1><br>
-<h1>laptop</h1><br>
-<h1>laptop</h1><br>
-<h1>laptop</h1><br>
+{% for laptop in laptops %}
+    <div class="row">
+        <div class="col-2" style="border-right: 2px solid black">
+        </div>
+        <div class="col-10">
+            {% include 'pieces/post.html' with post=laptop %}
+        </div>
+    </div>
+    <hr>
+{% endfor %}
+

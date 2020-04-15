@@ -1,5 +1,11 @@
-<h1>monitör</h1><br>
-<h1>monitör</h1><br>
-<h1>monitör</h1><br>
-<h1>monitör</h1><br>
-<h1>monitör</h1><br>
+{% for monitor in monitors %}
+    <div class="row">
+        <div class="col-2" style="border-right: 2px solid black">
+        </div>
+        <div class="col-10">
+            {% include 'pieces/post.html' with post=monitor %}
+        </div>
+    </div>
+    <hr>
+{% endfor %}
+

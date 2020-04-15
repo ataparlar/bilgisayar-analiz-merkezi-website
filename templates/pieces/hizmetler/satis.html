@@ -1,5 +1,11 @@
-<h1>satış</h1><br>
-<h1>satış</h1><br>
-<h1>satış</h1><br>
-<h1>satış</h1><br>
-<h1>satış</h1><br>
+{% for satis in satiss %}
+    <div class="row">
+        <div class="col-2" style="border-right: 2px solid black">
+        </div>
+        <div class="col-10">
+            {% include 'pieces/post.html' with post=satis %}
+        </div>
+    </div>
+    <hr>
+{% endfor %}
+

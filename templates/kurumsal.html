@@ -4,17 +4,17 @@
 
 {% block content %}
     <br>
-    <h1 class="ml-2 display-3"><b>Hizmetlerimiz</b></h1>
+    <h1 class="ml-2 display-3"><b>Kurumsal</b></h1>
     <hr><br>
 
-    {% for hizmetler in hizmetlers %}
+    {% for kurumsal in kurumsals %}
         <div class="row">
-            {% include 'pieces/post.html' with post=hizmetler%}
+            {% include 'pieces/post.html' with post=kurumsal%}
         </div>
         <hr>
     {% endfor %}
 
-    <!-- Hizmetler'in alt menülerinin sayfaları. -->
+    <!-- Kurumsal'ın alt menülerinin sayfaları. -->
     {% for key, value in urls.items %}
         <div id="{{ key }}">
             {% if key in request.path %}

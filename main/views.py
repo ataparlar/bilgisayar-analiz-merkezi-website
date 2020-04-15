@@ -6,7 +6,12 @@ from .models import *
 
 def main_view(request):
     main_images = KayanFotograf.objects.all()
-    return render(request, 'main.html', {"images": main_images})
+    main_posts = Post.objects.filter(page=Sayfa.objects.all()[11])
+    main_dict = {
+        "images": main_images,
+        "posts": main_posts,
+    }
+    return render(request, 'main.html', main_dict)
 
 
 def hizmetler_view(request):
@@ -23,6 +28,8 @@ def hizmetler_view(request):
         "laptop": "pieces/hizmetler/laptop.html",
         "kasa-pc": "pieces/hizmetler/kasa-pc.html"
     }
+
+    # hizmetler_dict hizmetler.html'e gönderilecek, tüm bilgiler onun içinde
     hizmetler_dict = {
         "urls": urls,
         "hizmetlers": hizmetler_post,
@@ -33,3 +40,23 @@ def hizmetler_view(request):
         "satiss": satis_post,
     }
     return render(request, 'hizmetler.html', hizmetler_dict)
+
+
+def kurumsal_view(request):
+    kurumsal_post = Post.objects.filter(page=Sayfa.objects.all()[6])
+    misyon_vizyon_post = Post.objects.filter(page=Sayfa.objects.all()[7])
+    hakkimizda_post = Post.objects.filter(page=Sayfa.objects.all()[8])
+    basin_post = Post.objects.filter(page=Sayfa.objects.all()[9])
+    urls = {
+        "misyon-vizyon": "pieces/kurumsal/misyon-vizyon.html",
+        "hakkimizda": "pieces/kurumsal/hakkimizda.html",
+        "basin": "pieces/kurumsal/basin.html",
+    }
+    kurumsal_dict = {
+        "urls": urls,
+        "kurumsals": kurumsal_post,
+        "misyon_vizyons": misyon_vizyon_post,
+        "hakkimizdas": hakkimizda_post,
+        "basins": basin_post,
+    }
+    return render(request, "kurumsal.html", kurumsal_dict)

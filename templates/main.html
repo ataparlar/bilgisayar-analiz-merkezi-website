@@ -3,11 +3,22 @@
 
 {% block css %}{% endblock %}
 
-{% block content %}
+{% block content-main-page %}
 
     {% include 'pieces/slider.html' %}
 
-    <div class="jumbotron col-12">
+    <br>
+
+    <div class="container">
+        {% for post in posts %}
+            {% include 'pieces/post.html' with post=post %}
+            <hr>
+        {% endfor %}
+    </div>
+
+    <br>
+
+    <div class="jumbotron bg-gray col-12">
         <div class="container col-xl-8 col-md-12 col-sm-10 col-xs-12">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-xs-12 text-center">
