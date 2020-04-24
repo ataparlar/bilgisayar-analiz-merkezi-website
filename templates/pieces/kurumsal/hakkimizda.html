@@ -1,11 +1,11 @@
-{% for hakkimizda in hakkimizdas %}
-    <div class="row">
-        <div class="col-2" style="border-right: 2px solid black">
-        </div>
-        <div class="col-10">
-            {% include 'pieces/post.html' with post=hakkimizda %}
-        </div>
+<div class="container">
+        <h1 class="font-weight-normal display-5 text-center m-3">Hakkımızda</h1>
+        <br>
+        <hr>
+        <br>
     </div>
-    <hr>
+
+{% for hakkimizda in hakkimizdas %}
+    {% include 'pieces/post2.html' with post=hakkimizda %}
 {% endfor %}
 

@@ -1,18 +1,32 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
 class Post(models.Model):
     title = models.CharField(
-        max_length=120,verbose_name="Post Başlığı:"
+        max_length=120,
+        verbose_name="Post Başlığı:"
     )
-    text = models.TextField(
+    """text = models.TextField(
+        verbose_name="Post Metni:"
+    )"""
+    query = models.SmallIntegerField(
+        verbose_name="Post Sırası:",
+        default=1,
+    )
+    text = RichTextField(
         verbose_name="Post Metni:"
     )
     img = models.ImageField(
         blank=True,
         null=True,
         verbose_name="Post Fotoğrafı:"
+    )
+    width = models.SmallIntegerField(
+        verbose_name="Görselin genişliği. Piksel biriminde.",
+        blank=True,
+        null=True,
     )
     date = models.DateField(
         blank=True,

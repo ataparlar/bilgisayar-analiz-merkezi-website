@@ -1,23 +1,51 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block css %}{% endblock %}
+{% block css %}
+    <style>
+body{
+
+}
+.bg-container{
+    background-image: url("/static/img/b1_soft.png");
+    background-attachment: fixed;
+    height: 70vh;
+    width: 100%;
+}
+.logo-nav{
+    display: none;
+}
+    @media screen and (max-width: 768px) {
+  .logo-nav {
+    display: block;
+  }
+}
+
+    </style>
+{% endblock %}
 
 {% block content-main-page %}
 
-    {% include 'pieces/slider.html' %}
-
-    <br>
-
-    <div class="container">
-        {% for post in posts %}
-            {% include 'pieces/post.html' with post=post %}
-            <hr>
-        {% endfor %}
+    <div class="bg-container d-flex">
+        <div class="logo justify-content-center align-self-center w-100 text-center">
+            <img class="col-xl-5 col-lg-7 col-md-9 col-sm-11" src="{% static 'img/logo1.png' %}" alt="">
+        </div>
     </div>
+{% endblock %}
 
-    <br>
+    
+{% block content %}
 
+    <br><br>
+{% for post in posts %}
+    {% include 'pieces/post2.html' %}
+{% endfor %}
+
+
+
+
+
+<!--
     <div class="jumbotron bg-gray col-12">
         <div class="container col-xl-8 col-md-12 col-sm-10 col-xs-12">
             <div class="row">
@@ -44,6 +72,16 @@
             </div>
         </div>
     </div>
-
-
+-->
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
 {% endblock %}

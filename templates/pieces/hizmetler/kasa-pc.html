@@ -1,11 +1,11 @@
-{% for kasa-pc in kasa-pcs %}
-    <div class="row">
-        <div class="col-2" style="border-right: 2px solid black">
-        </div>
-        <div class="col-10">
-            {% include 'pieces/post.html' with post=kasa-pc %}
-        </div>
+<div class="container">
+        <h1 class="font-weight-normal display-5 text-center m-3">Kasa-PC Tamiri</h1>
+        <br>
+        <hr>
+        <br>
     </div>
-    <hr>
+
+{% for kasa_pc in kasa_pcs %}
+    {% include 'pieces/post2.html' with post=kasa_pc %}
 {% endfor %}
 

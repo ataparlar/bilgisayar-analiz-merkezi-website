@@ -3,18 +3,26 @@
 
 
 {% block content %}
-    <br>
-    <h1 class="ml-2 display-3"><b>Hizmetlerimiz</b></h1>
-    <hr><br>
+
+
+    <br><br><br><br><br>
+
+    <div class="container">
+        <img src="{% static 'img/logo1.png' %}" class="w-100">
+        <br><br><br>
+        <h1 class="font-weight-normal display-4 text-center m-3">HİZMETLERİMİZ</h1>
+        <br>
+        <hr>
+        <br>
+    </div>
 
     {% for hizmetler in hizmetlers %}
-        <div class="row">
-            {% include 'pieces/post.html' with post=hizmetler%}
-        </div>
-        <hr>
+        {% include 'pieces/post2.html' with post=hizmetler%}
     {% endfor %}
 
-    <!-- Hizmetler'in alt menülerinin sayfaları. -->
+    <br>
+
+<!-- Hizmetler'in alt menülerinin sayfaları. -->
     {% for key, value in urls.items %}
         <div id="{{ key }}">
             {% if key in request.path %}

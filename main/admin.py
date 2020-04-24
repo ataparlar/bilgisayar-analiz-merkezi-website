@@ -13,7 +13,7 @@ admin.site.register(KayanFotograf, adminSlider)
 
 
 class adminPost(admin.ModelAdmin):
-    list_display = ["title", "date"]
+    list_display = ["title", "text", "date"]
 
     class Meta:
         model = Post
@@ -27,4 +27,3 @@ class adminPage(admin.ModelAdmin):
         model = Sayfa
 
 admin.site.register(Sayfa, adminPage)
-

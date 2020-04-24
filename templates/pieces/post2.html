@@ -1,0 +1,58 @@
+{% load static %}
+
+{% if post.img %}
+
+    {% if post.query|divisibleby:2 == 0 %}  <!--  FOTOĞRAF SAĞDA  -->
+
+        <div class="container-fluid">
+            <div class="container col-md-9 col-sm-12">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 p-5">
+                        <div class="text-center">
+                            {{ post.text | safe }}
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 p-5 text-center justify-content-center align-self-center">
+                        <div>
+                            <img class="w-100" src="{% static 'img/logo1.png' %}" alt="" style="width: {{ post.width }}">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <hr>
+            </div>
+        </div>
+    {% elif post.query|divisibleby:2 == 1 %}  <!--  FOTOĞRAF SOLDA  -->
+
+        <div class="container-fluid">
+            <div class="container col-md-9 col-sm-12">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 p-5 text-center justify-content-center align-self-center">
+                        <div>
+                            <img class="w-100" src="{% static 'img/logo1.png' %}" alt="" style="width: {{ post.width }}">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 p-5">
+                        <div class="text-center">
+                            {{ post.text | safe }}
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <hr>
+            </div>
+        </div>
+
+    {% endif %}
+
+{% else %}
+
+    <div class="container">
+        <div class="text-center">
+            {{ post.text | safe }}
+        </div>
+    </div>
+    <br>
+    <hr>
+
+{% endif %}

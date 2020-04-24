@@ -3,18 +3,25 @@
 
 
 {% block content %}
-    <br>
-    <h1 class="ml-2 display-3"><b>Kurumsal</b></h1>
-    <hr><br>
+
+    <br><br><br><br><br>
+
+    <div class="container">
+        <img src="{% static 'img/logo1.png' %}" class="w-100">
+        <br><br><br>
+        <h1 class="font-weight-normal display-4 text-center m-3">KURUMSAL</h1>
+        <br>
+        <hr>
+        <br>
+    </div>
 
     {% for kurumsal in kurumsals %}
-        <div class="row">
-            {% include 'pieces/post.html' with post=kurumsal%}
-        </div>
-        <hr>
+        {% include 'pieces/post2.html' with post=kurumsal%}
     {% endfor %}
 
-    <!-- Kurumsal'ın alt menülerinin sayfaları. -->
+    <br>
+
+<!-- Kurumsal'ın alt menülerinin sayfaları. -->
     {% for key, value in urls.items %}
         <div id="{{ key }}">
             {% if key in request.path %}

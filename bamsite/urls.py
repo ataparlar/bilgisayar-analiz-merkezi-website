@@ -35,6 +35,10 @@ urlpatterns = [
     path('kurumsal/misyon-vizyon', kurumsal_view),
     path('kurumsal/hakkimizda', kurumsal_view),
     path('kurumsal/basin', kurumsal_view),
+
+    path('calisma_sistemimiz', calisma_sistemi_view),
+
+    path('iletisim', iletisim_view),
 ]
 
 
